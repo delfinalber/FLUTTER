@@ -1,0 +1,18 @@
+/*
+ * Paleta de colores compartida por todas las páginas (inicio, productos y contacto).
+ * Estos son los valores por defecto; tema.php los reemplaza con la paleta calculada
+ * a partir del banner que se sube en el editor de Inicio.
+ */
+
+:root {
+	--pizza-negro: #0f090a;
+	--pizza-negro-suave: #1a1113;
+	--pizza-naranja: #ff8b1a;
+	--pizza-amarillo: #ffc21a;
+	--pizza-rojo: #d90a0a;
+	--pizza-rojo-profundo: #8f0909;
+	--pizza-rojo-vivo: #ff2e2e;
+	--pizza-blanco: #f7f5f3;
+	--pizza-gris: #e7e2de;
+	--banner-url: none;
+}

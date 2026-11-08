@@ -1,0 +1,8 @@
+# Dependencias de Composer (se reinstalan con: composer install)
+vendor/
+
+# Archivo comprimido duplicado y muy pesado (~99 MB)
+pizza-julian/contacto.zip
+
+# Configuración local del editor/herramientas
+.refact/

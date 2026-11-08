@@ -1,0 +1,561 @@
+/*
+ * Copyright (c) 2026 . All rights reserved.
+ */
+
+.banner {
+	width: 100%;
+	overflow: hidden;
+}
+
+.banner img {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	display: block;
+	transition: transform 0.35s ease;
+    
+}
+
+.banner:hover img {
+	transform: scale(1.08);
+}
+
+/* Nav con paleta del banner */
+.nav-pizzeria {
+	background: linear-gradient(90deg, var(--pizza-negro) 0%, var(--pizza-rojo-profundo) 48%, var(--pizza-negro) 100%);
+	border-top: 3px solid var(--pizza-naranja);
+	border-bottom: 3px solid var(--pizza-rojo);
+	box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
+}
+
+.nav-pizzeria .navbar-brand {
+	color: var(--pizza-naranja);
+	font-weight: 700;
+	letter-spacing: 0.06rem;
+	text-transform: uppercase;
+}
+
+.nav-pizzeria .navbar-brand:hover,
+.nav-pizzeria .navbar-brand:focus {
+	color: var(--pizza-amarillo);
+}
+
+.nav-pizzeria .nav-link {
+	color: var(--pizza-blanco);
+	font-weight: 600;
+}
+
+.nav-pizzeria .nav-link:hover,
+.nav-pizzeria .nav-link:focus,
+.nav-pizzeria .nav-link.active {
+	color: var(--pizza-amarillo);
+}
+
+.nav-pizzeria .navbar-toggler {
+	border-color: var(--pizza-naranja);
+	background-color: color-mix(in srgb, var(--pizza-naranja) 8%, transparent);
+}
+
+.nav-pizzeria .navbar-toggler:focus {
+	box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--pizza-naranja) 25%, transparent);
+}
+
+.nav-pizzeria .navbar-toggler-icon {
+	filter: brightness(0) invert(1);
+}
+
+.nav-pizzeria .form-control {
+	background-color: color-mix(in srgb, var(--pizza-amarillo) 5%, var(--pizza-blanco));
+	border-color: color-mix(in srgb, color-mix(in srgb, var(--pizza-negro-suave) 55%, var(--pizza-rojo-vivo)) 80%, var(--pizza-amarillo));
+	color: color-mix(in srgb, var(--pizza-naranja) 15%, black);
+}
+
+.nav-pizzeria .form-control:focus {
+	border-color: var(--pizza-naranja);
+	box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--pizza-naranja) 25%, transparent);
+}
+
+.nav-pizzeria .btn-outline-success {
+	border-color: var(--pizza-naranja);
+	color: var(--pizza-amarillo);
+}
+
+.nav-pizzeria .btn-outline-success:hover,
+.nav-pizzeria .btn-outline-success:focus {
+	background-color: var(--pizza-rojo);
+	border-color: var(--pizza-rojo);
+	color: var(--pizza-blanco);
+}
+
+/* Modal de inicio de sesion con paleta del banner */
+.login-modal .modal-content {
+	background-image: linear-gradient(color-mix(in srgb, var(--pizza-negro) 88%, transparent), color-mix(in srgb, var(--pizza-negro) 90%, transparent)), var(--banner-url);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro) 75%, var(--pizza-rojo)) 85%, var(--pizza-blanco));
+	border-top: 4px solid var(--pizza-naranja);
+	border-radius: 14px;
+	box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+	color: var(--pizza-blanco);
+}
+
+.login-modal .modal-header {
+	border-bottom: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro) 85%, var(--pizza-rojo)) 85%, var(--pizza-gris));
+}
+
+.login-modal .modal-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.login-modal .login-contador {
+	font-size: 0.9rem;
+	color: var(--pizza-gris);
+	background-color: color-mix(in srgb, var(--pizza-naranja) 12%, transparent);
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro) 75%, var(--pizza-rojo)) 85%, var(--pizza-blanco));
+	border-radius: 999px;
+	padding: 0.15rem 0.7rem;
+}
+
+.login-modal .login-contador strong {
+	color: var(--pizza-amarillo);
+}
+
+.login-modal .modal-title {
+	color: var(--pizza-amarillo);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.03rem;
+}
+
+.login-modal .btn-close {
+	filter: invert(1) brightness(1.3);
+}
+
+.login-modal .form-label {
+	color: var(--pizza-amarillo);
+	font-weight: 600;
+}
+
+.login-modal .form-control {
+	background-color: color-mix(in srgb, var(--pizza-naranja) 10%, var(--pizza-blanco));
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro-suave) 60%, var(--pizza-amarillo)) 65%, var(--pizza-rojo-vivo));
+	color: color-mix(in srgb, var(--pizza-negro) 90%, var(--pizza-naranja));
+}
+
+.login-modal .form-control:focus {
+	border-color: var(--pizza-naranja);
+	box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--pizza-naranja) 25%, transparent);
+}
+
+.login-modal .btn-login {
+	background: linear-gradient(90deg, var(--pizza-rojo) 0%, color-mix(in srgb, color-mix(in srgb, var(--pizza-naranja) 80%, var(--pizza-rojo-profundo)) 60%, var(--pizza-rojo-vivo)) 100%);
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-naranja) 70%, var(--pizza-rojo-vivo)) 90%, var(--pizza-blanco));
+	color: var(--pizza-blanco);
+	font-weight: 700;
+}
+
+.login-modal .btn-login:hover,
+.login-modal .btn-login:focus {
+	background: linear-gradient(90deg, color-mix(in srgb, var(--pizza-naranja) 60%, var(--pizza-rojo-vivo)) 0%, var(--pizza-rojo) 100%);
+	border-color: var(--pizza-amarillo);
+	color: var(--pizza-blanco);
+	box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--pizza-amarillo) 18%, transparent);
+}
+
+/* Acordeon con paleta del banner */
+#accordionExample .accordion-item {
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro) 95%, var(--pizza-rojo)) 90%, var(--pizza-gris));
+	background-color: var(--pizza-negro-suave);
+	margin-bottom: 0.35rem;
+	overflow: hidden;
+}
+
+#accordionExample .accordion-button {
+	background-color: var(--pizza-negro);
+	color: var(--pizza-gris);
+	font-weight: 600;
+}
+
+#accordionExample .accordion-button:not(.collapsed) {
+	background: linear-gradient(90deg, var(--pizza-naranja) 0%, var(--pizza-amarillo) 100%);
+	color: color-mix(in srgb, var(--pizza-naranja) 15%, black);
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+}
+
+#accordionExample .accordion-button:focus {
+	box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--pizza-naranja) 30%, transparent);
+}
+
+#accordionExample .accordion-body {
+	background-color: color-mix(in srgb, var(--pizza-negro-suave) 95%, var(--pizza-rojo-vivo));
+	color: var(--pizza-blanco);
+	line-height: 1.6;
+}
+
+#accordionExample .accordion-button::after {
+	filter: brightness(0) invert(1);
+}
+
+#accordionExample .accordion-button:not(.collapsed)::after {
+	filter: brightness(0) saturate(100%) invert(11%) sepia(18%) saturate(2338%) hue-rotate(353deg) brightness(95%) contrast(95%);
+}
+
+/* Colapsar con paleta del banner */
+.colapsar-pizzeria {
+	background: radial-gradient(circle at top center, color-mix(in srgb, var(--pizza-negro-suave) 95%, var(--pizza-rojo-vivo)) 0%, var(--pizza-negro) 65%);
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro) 85%, var(--pizza-gris)) 90%, var(--pizza-rojo-profundo));
+	border-radius: 12px;
+	padding: 1.25rem;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.btn-colapsar {
+	background: linear-gradient(90deg, var(--pizza-rojo) 0%, color-mix(in srgb, var(--pizza-negro-suave) 20%, var(--pizza-rojo)) 100%);
+	border: 1px solid var(--pizza-rojo-vivo);
+	color: var(--pizza-blanco);
+	font-weight: 700;
+	width: 100%;
+}
+
+.btn-colapsar:hover,
+.btn-colapsar:focus {
+	background: linear-gradient(90deg, color-mix(in srgb, var(--pizza-rojo) 55%, var(--pizza-rojo-vivo)) 0%, var(--pizza-rojo) 100%);
+	color: var(--pizza-blanco);
+	box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--pizza-rojo) 30%, transparent);
+}
+
+.collapse-card-width {
+	width: 100%;
+	min-height: 130px;
+	background-color: color-mix(in srgb, var(--pizza-negro-suave) 95%, var(--pizza-blanco));
+	color: var(--pizza-gris);
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro) 85%, var(--pizza-rojo)) 85%, var(--pizza-blanco));
+	border-left: 4px solid var(--pizza-naranja);
+	text-align: justify;
+}
+
+/* Footer con paleta del banner */
+.footer-pizzeria {
+	margin-top: 1.5rem;
+	padding: 2rem 0;
+	background: linear-gradient(180deg, var(--pizza-negro-suave) 0%, var(--pizza-negro) 100%);
+	border-top: 4px solid var(--pizza-naranja);
+}
+
+.footer-box {
+	background: rgba(255, 255, 255, 0.02);
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro-suave) 90%, var(--pizza-gris)) 95%, var(--pizza-rojo));
+	border-radius: 14px;
+	padding: 1.5rem 1rem;
+}
+
+.footer-social {
+	display: flex;
+	justify-content: center;
+	gap: 0.9rem;
+	margin-bottom: 1rem;
+}
+
+.footer-social a {
+	color: var(--pizza-blanco);
+	font-size: 1.4rem;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: color-mix(in srgb, color-mix(in srgb, var(--pizza-rojo) 65%, var(--pizza-blanco)) 10%, var(--pizza-negro-suave));
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro) 75%, var(--pizza-rojo)) 85%, var(--pizza-blanco));
+	transition: all 0.2s ease;
+}
+
+.footer-social a:hover,
+.footer-social a:focus {
+	color: var(--pizza-blanco);
+	background: linear-gradient(135deg, var(--pizza-rojo) 0%, color-mix(in srgb, color-mix(in srgb, var(--pizza-naranja) 70%, var(--pizza-rojo)) 50%, var(--pizza-rojo-vivo)) 100%);
+	border-color: color-mix(in srgb, color-mix(in srgb, var(--pizza-naranja) 40%, var(--pizza-rojo-vivo)) 80%, var(--pizza-blanco));
+	transform: translateY(-2px);
+}
+
+.footer-menu {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+	margin-bottom: 1rem;
+}
+
+.footer-menu a {
+	color: var(--pizza-gris);
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.footer-menu a:hover,
+.footer-menu a:focus {
+	color: var(--pizza-amarillo);
+}
+
+.footer-copy {
+	margin: 0;
+	color: color-mix(in srgb, color-mix(in srgb, var(--pizza-negro) 70%, var(--pizza-naranja)) 20%, var(--pizza-gris));
+	font-size: 0.95rem;
+}
+
+/* Boton flotante con la paleta del banner */
+.whatsapp-float {
+	position: fixed;
+	right: 1.5rem;
+	bottom: 1.5rem;
+	z-index: 1030;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	border: 3px solid var(--pizza-naranja);
+	border-radius: 50%;
+	background: linear-gradient(145deg, var(--pizza-rojo) 0%, var(--pizza-rojo-profundo) 100%);
+	box-shadow: 0 0 0 4px color-mix(in srgb, var(--pizza-naranja) 20%, transparent), 0 8px 20px rgba(0, 0, 0, 0.45);
+	color: var(--pizza-blanco);
+	font-size: 2rem;
+	line-height: 1;
+	text-decoration: none;
+	transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+	transform: translateY(-4px) scale(1.05);
+	background: linear-gradient(145deg, var(--pizza-naranja) 0%, var(--pizza-rojo) 100%);
+	border-color: var(--pizza-amarillo);
+	color: var(--pizza-blanco);
+	box-shadow: 0 0 0 5px color-mix(in srgb, var(--pizza-amarillo) 25%, transparent), 0 10px 24px rgba(0, 0, 0, 0.5);
+	outline: none;
+}
+
+@media (max-width: 575.98px) {
+	.whatsapp-float {
+		right: 1rem;
+		bottom: 1rem;
+		width: 54px;
+		height: 54px;
+		font-size: 1.75rem;
+	}
+}
+
+/* Editor de contenido con paleta del banner */
+.editor-panel {
+	background: radial-gradient(circle at top center, color-mix(in srgb, var(--pizza-negro-suave) 95%, var(--pizza-rojo-vivo)) 0%, var(--pizza-negro) 65%);
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro) 85%, var(--pizza-gris)) 90%, var(--pizza-rojo-profundo));
+	border-radius: 12px;
+	padding: 1.5rem;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+	color: var(--pizza-blanco);
+}
+
+.editor-panel h2 {
+	color: var(--pizza-amarillo);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.03rem;
+}
+
+.editor-card {
+	background-color: var(--pizza-negro-suave);
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro-suave) 90%, var(--pizza-gris)) 95%, var(--pizza-rojo));
+	border-left: 4px solid var(--pizza-naranja);
+	border-radius: 10px;
+	color: var(--pizza-gris);
+}
+
+.editor-card .card-title {
+	color: var(--pizza-amarillo);
+	font-weight: 700;
+}
+
+.editor-alert {
+	border-radius: 10px;
+	border-left: 4px solid var(--pizza-naranja);
+}
+
+.btn-editar {
+	background: linear-gradient(90deg, var(--pizza-naranja) 0%, var(--pizza-amarillo) 100%);
+	border: 1px solid var(--pizza-naranja);
+	color: color-mix(in srgb, var(--pizza-naranja) 15%, black);
+	font-weight: 700;
+}
+
+.btn-editar:hover,
+.btn-editar:focus {
+	background: linear-gradient(90deg, var(--pizza-amarillo) 0%, var(--pizza-naranja) 100%);
+	color: color-mix(in srgb, var(--pizza-naranja) 15%, black);
+	box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--pizza-amarillo) 25%, transparent);
+}
+
+.btn-eliminar {
+	background: linear-gradient(90deg, var(--pizza-rojo) 0%, var(--pizza-rojo-profundo) 100%);
+	border: 1px solid var(--pizza-rojo);
+	color: var(--pizza-blanco);
+	font-weight: 700;
+}
+
+.btn-eliminar:hover,
+.btn-eliminar:focus {
+	background: linear-gradient(90deg, color-mix(in srgb, var(--pizza-rojo) 55%, var(--pizza-rojo-vivo)) 0%, var(--pizza-rojo) 100%);
+	color: var(--pizza-blanco);
+	box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--pizza-rojo) 30%, transparent);
+}
+
+/* Modal editor con paleta del banner */
+.editor-modal .modal-content {
+	background-image: linear-gradient(color-mix(in srgb, var(--pizza-negro) 92%, transparent), color-mix(in srgb, var(--pizza-negro) 94%, transparent)), var(--banner-url);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro) 75%, var(--pizza-rojo)) 85%, var(--pizza-blanco));
+	border-top: 4px solid var(--pizza-naranja);
+	border-radius: 14px;
+	box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+	color: var(--pizza-blanco);
+	overflow: hidden;
+}
+
+/* El formulario envuelve header/body/footer, así que hereda el layout flex que Bootstrap aplica a modal-content */
+.editor-modal .modal-content > form {
+	display: flex;
+	flex-direction: column;
+	min-height: 0;
+	max-height: 100%;
+	overflow: hidden;
+}
+
+.editor-modal .modal-body {
+	overflow-y: auto;
+}
+
+.editor-modal .modal-header,
+.editor-modal .modal-footer {
+	border-color: color-mix(in srgb, color-mix(in srgb, var(--pizza-negro) 85%, var(--pizza-rojo)) 85%, var(--pizza-gris));
+	flex-shrink: 0;
+}
+
+.editor-modal .modal-title {
+	color: var(--pizza-amarillo);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.03rem;
+}
+
+.editor-modal .btn-close {
+	filter: invert(1) brightness(1.3);
+}
+
+.editor-modal .form-label {
+	color: var(--pizza-amarillo);
+	font-weight: 600;
+}
+
+.editor-modal .form-control,
+.editor-modal textarea.form-control {
+	background-color: color-mix(in srgb, var(--pizza-naranja) 10%, var(--pizza-blanco));
+	border: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro-suave) 60%, var(--pizza-amarillo)) 65%, var(--pizza-rojo-vivo));
+	color: color-mix(in srgb, var(--pizza-negro) 90%, var(--pizza-naranja));
+}
+
+.editor-modal .form-control:focus {
+	border-color: var(--pizza-naranja);
+	box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--pizza-naranja) 25%, transparent);
+}
+
+.editor-modal fieldset legend {
+	color: var(--pizza-amarillo);
+	font-size: 1rem;
+	font-weight: 700;
+	border-bottom: 1px solid color-mix(in srgb, color-mix(in srgb, var(--pizza-negro) 85%, var(--pizza-rojo)) 85%, var(--pizza-gris));
+	padding-bottom: 0.25rem;
+	margin-bottom: 0.75rem;
+	margin-top: 1rem;
+}
+
+/* Carrusel Styles */
+.media-column {
+	height: 500px;
+}
+
+#carouselExampleAutoplaying {
+	height: 500px;
+	overflow: hidden;
+}
+
+.carousel-inner {
+	height: 100%;
+}
+
+.carousel-item {
+	height: 100%;
+}
+
+.carousel-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: opacity 0.6s ease;
+}
+
+.promo-video {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border: 0;
+}
+
+.accordion .accordion-body.accordion-justify {
+	text-align: justify;
+}
+
+.accordion .accordion-item .accordion-body {
+	text-align: justify !important;
+}
+
+@media (max-width: 991.98px) {
+	.media-column {
+		height: 320px;
+	}
+
+	#carouselExampleAutoplaying {
+		height: 320px;
+	}
+
+	.footer-social a {
+		width: 38px;
+		height: 38px;
+	}
+}
+
+
+/* Paleta calculada del banner en el editor de Inicio */
+.editor-modal .editor-ayuda,
+.editor-modal .paleta-banner-texto {
+	color: var(--pizza-gris);
+}
+
+.paleta-banner-colores {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-top: 0.4rem;
+}
+
+.paleta-banner-colores span {
+	width: 30px;
+	height: 30px;
+	border-radius: 6px;
+	border: 1px solid color-mix(in srgb, var(--pizza-blanco) 35%, transparent);
+}
