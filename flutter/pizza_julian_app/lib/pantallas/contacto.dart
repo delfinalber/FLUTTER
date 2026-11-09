@@ -7,6 +7,7 @@ import '../api.dart';
 import '../navegacion.dart';
 import '../tema.dart';
 import '../widgets/comunes.dart';
+import '../widgets/iframe.dart';
 
 // Pantalla pública de Contacto (contacto/contactos.php): mapa de Google y formulario
 class PantallaContacto extends StatefulWidget {
@@ -88,17 +89,19 @@ class _MapaContactoState extends State<MapaContacto> {
       children: [
         SizedBox(
           height: 320,
-          child: _controlador != null
-              ? WebViewWidget(
-                  controller: _controlador!,
-                  // permite mover el mapa con el dedo dentro de la pantalla que hace scroll
-                  gestureRecognizers: const {Factory<EagerGestureRecognizer>(EagerGestureRecognizer.new)},
-                )
-              : Container(
-                  color: pz.negroSuave,
-                  alignment: Alignment.center,
-                  child: Icon(Icons.map_outlined, color: pz.naranja, size: 64),
-                ),
+          child: kIsWeb
+              ? iframeWeb(widget.url)
+              : _controlador != null
+                  ? WebViewWidget(
+                      controller: _controlador!,
+                      // permite mover el mapa con el dedo dentro de la pantalla que hace scroll
+                      gestureRecognizers: const {Factory<EagerGestureRecognizer>(EagerGestureRecognizer.new)},
+                    )
+                  : Container(
+                      color: pz.negroSuave,
+                      alignment: Alignment.center,
+                      child: Icon(Icons.map_outlined, color: pz.naranja, size: 64),
+                    ),
         ),
         TextButton.icon(
           onPressed: () => abrirUrl(context, widget.url),

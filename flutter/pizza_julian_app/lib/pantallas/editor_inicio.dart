@@ -129,11 +129,22 @@ class FormularioInicio extends StatefulWidget {
 class _FormularioInicioState extends State<FormularioInicio> {
   static const _camposTexto = [
     'url_video_inicio',
-    'acor1_titulo_inicio', 'acor1_texto_inicio', 'acor2_titulo_inicio', 'acor2_texto_inicio',
-    'acor3_titulo_inicio', 'acor3_texto_inicio', 'acor4_titulo_inicio', 'acor4_texto_inicio',
-    'acor5_titulo_inicio', 'acor5_texto_inicio',
-    'colapsar1_titulo_inicio', 'colapsar1_texto_inicio', 'colapsar2_titulo_inicio', 'colapsar2_texto_inicio',
-    'colapsar3_titulo_inicio', 'colapsar3_texto_inicio',
+    'acor1_titulo_inicio',
+    'acor1_texto_inicio',
+    'acor2_titulo_inicio',
+    'acor2_texto_inicio',
+    'acor3_titulo_inicio',
+    'acor3_texto_inicio',
+    'acor4_titulo_inicio',
+    'acor4_texto_inicio',
+    'acor5_titulo_inicio',
+    'acor5_texto_inicio',
+    'colapsar1_titulo_inicio',
+    'colapsar1_texto_inicio',
+    'colapsar2_titulo_inicio',
+    'colapsar2_texto_inicio',
+    'colapsar3_titulo_inicio',
+    'colapsar3_texto_inicio',
     'numero_whatsapp',
   ];
 

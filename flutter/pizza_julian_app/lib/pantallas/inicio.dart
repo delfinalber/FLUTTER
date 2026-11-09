@@ -152,7 +152,9 @@ class _AcordeonPizzeriaState extends State<AcordeonPizzeria> {
         ),
         child: Row(
           children: [
-            Expanded(child: Text(widget.elementos[i].$1, style: TextStyle(color: colorTexto, fontSize: 16, fontWeight: abierto ? FontWeight.w700 : FontWeight.w500))),
+            Expanded(
+                child:
+                    Text(widget.elementos[i].$1, style: TextStyle(color: colorTexto, fontSize: 16, fontWeight: abierto ? FontWeight.w700 : FontWeight.w500))),
             AnimatedRotation(
               turns: abierto ? 0.5 : 0,
               duration: const Duration(milliseconds: 200),

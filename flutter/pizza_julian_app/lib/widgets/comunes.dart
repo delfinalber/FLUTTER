@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../api.dart';
@@ -99,9 +100,8 @@ class ImagenRed extends StatelessWidget {
       height: alto,
       width: double.infinity,
       errorBuilder: (_, __, ___) => _vacia(),
-      loadingBuilder: (_, hijo, progreso) => progreso == null
-          ? hijo
-          : SizedBox(height: alto ?? 120, child: Center(child: CircularProgressIndicator(color: pz.naranja, strokeWidth: 2))),
+      loadingBuilder: (_, hijo, progreso) =>
+          progreso == null ? hijo : SizedBox(height: alto ?? 120, child: Center(child: CircularProgressIndicator(color: pz.naranja, strokeWidth: 2))),
     );
   }
 
@@ -236,7 +236,7 @@ class FooterPizzeria extends StatelessWidget {
         ),
       );
 
-  Widget _social(BuildContext context, IconData icono, VoidCallback? alTocar) => Padding(
+  Widget _social(BuildContext context, FaIconData icono, VoidCallback? alTocar) => Padding(
         padding: const EdgeInsets.all(5),
         child: InkWell(
           customBorder: const CircleBorder(),
@@ -320,7 +320,8 @@ class WhatsappFlotante extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Tooltip(
+    return PointerInterceptor(
+        child: Tooltip(
       message: 'Enviar mensaje por WhatsApp',
       child: Semantics(
         button: true,
@@ -344,7 +345,7 @@ class WhatsappFlotante extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ));
   }
 }
 
@@ -522,7 +523,8 @@ class EstadoCarga extends StatelessWidget {
                 children: [
                   Alerta(error!, error: true),
                   if (alReintentar != null)
-                    BotonGradiente(texto: 'Reintentar', colores: [pz.naranja, pz.amarillo], colorTexto: pz.negro, icono: Icons.refresh, alPresionar: alReintentar),
+                    BotonGradiente(
+                        texto: 'Reintentar', colores: [pz.naranja, pz.amarillo], colorTexto: pz.negro, icono: Icons.refresh, alPresionar: alReintentar),
                 ],
               ),
       ),

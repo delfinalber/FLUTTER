@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 
 import '../api.dart';
 import '../tema.dart';
@@ -105,7 +106,9 @@ class _LoginDialogoState extends State<LoginDialogo> {
   @override
   Widget build(BuildContext context) {
     final borde = mezclar(mezclar(pz.negro, 75, pz.rojo), 85, pz.blanco);
-    return Dialog(
+    // PointerInterceptor: en la versión web evita que el mapa (iframe) de debajo se quede con los clics
+    return PointerInterceptor(
+        child: Dialog(
       backgroundColor: Colors.transparent,
       insetPadding: const EdgeInsets.all(16),
       child: ClipRRect(
@@ -193,6 +196,6 @@ class _LoginDialogoState extends State<LoginDialogo> {
           ),
         ),
       ),
-    );
+    ));
   }
 }

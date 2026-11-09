@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 
 import '../api.dart';
 import '../navegacion.dart';
@@ -31,7 +32,8 @@ void manejarErrorEditor(BuildContext context, Seccion seccion, Object error) {
 Future<bool> confirmar(BuildContext context, String pregunta) async =>
     await showDialog<bool>(
       context: context,
-      builder: (_) => AlertDialog(
+      builder: (_) => PointerInterceptor(
+          child: AlertDialog(
         content: Text(pregunta),
         actions: [
           TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancelar')),
@@ -41,7 +43,7 @@ Future<bool> confirmar(BuildContext context, String pregunta) async =>
             child: const Text('Aceptar'),
           ),
         ],
-      ),
+      )),
     ) ??
     false;
 

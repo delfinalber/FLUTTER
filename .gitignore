@@ -6,3 +6,7 @@ pizza-julian/contacto.zip
 
 # Configuración local del editor/herramientas
 .refact/
+
+# SDK de Flutter instalado localmente (no se sube a GitHub)
+flutter/flutter_sdk/
+flutter/flutter_sdk.zip
