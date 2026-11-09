@@ -76,6 +76,14 @@ const _imagenesProtegidasInicio = {'banner.png', '1.jpeg', '2.jpeg', '3.jpeg'};
 const _camposImagenProductos = ['img1_carru_productos', 'img2_carru_productos', 'img3_carru_productos'];
 const _camposTextoProductos = ['card_title_productos', 'card_texto_productos', 'btn_primary_productos'];
 
+// Longitud máxima de cada campo de texto (igual a la columna VARCHAR de PostgreSQL)
+int _limiteCampo(String campo) {
+  if (campo == 'numero_whatsapp') return 20;
+  if (campo == 'url_video_inicio' || campo == 'card_title_productos' || campo == 'btn_primary_productos') return 200;
+  if (campo.contains('_titulo_')) return 150;
+  return 500;
+}
+
 // Convierte enlaces de YouTube (watch, youtu.be, shorts) al formato /embed/
 String normalizarUrlYoutubeEmbed(String url) {
   url = url.trim();
@@ -324,9 +332,21 @@ class PizzaJulianApi {
     return nuevas;
   }
 
+  // Devuelve un error 422 si algún campo de texto supera la longitud de su columna
+  Response? _validarLongitudes(Map<String, dynamic> datos, List<String> campos) {
+    for (final campo in campos) {
+      if (_texto(datos, campo).length > _limiteCampo(campo)) {
+        return _error('El campo "$campo" supera ${_limiteCampo(campo)} caracteres. No se guardaron cambios.', estado: 422);
+      }
+    }
+    return null;
+  }
+
   Future<Response> _guardarInicio(Request request, int? id) async {
     if (await _usuarioAutenticado(request) == null) return _noAutorizado();
     final datos = await _cuerpo(request);
+    final errorLongitud = _validarLongitudes(datos, _camposTextoInicio);
+    if (errorLongitud != null) return errorLongitud;
 
     Map<String, dynamic> actual = {};
     if (id != null) {
@@ -401,6 +421,8 @@ class PizzaJulianApi {
   Future<Response> _guardarProducto(Request request, int? id) async {
     if (await _usuarioAutenticado(request) == null) return _noAutorizado();
     final datos = await _cuerpo(request);
+    final errorLongitud = _validarLongitudes(datos, _camposTextoProductos);
+    if (errorLongitud != null) return errorLongitud;
 
     Map<String, dynamic> actual = {};
     if (id != null) {
